@@ -24,6 +24,20 @@
                     <input type="text" th:field="*{title}">
                     <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error-message"></div>
                 </div>
+				
+				<div class="form-group">
+				    <label>優先度</label>
+					<div class="priority-group">
+					        <label th:each="priority : ${priorities}"
+					               th:class="${'priority-pill ' + priority.name().toLowerCase()}">
+					            <input type="radio"
+					                   class="priority-radio"
+					                   th:field="*{priority}"
+					                   th:value="${priority}">
+					            <span th:text="${priority.label}">LOW</span>
+					        </label>
+					    </div>
+				</div>
 
                 <div class="form-group">
                     <label>内容：</label>
