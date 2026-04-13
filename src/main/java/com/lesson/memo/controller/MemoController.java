@@ -46,10 +46,13 @@ public class MemoController {
     public String search(@RequestParam(name = "keyword")String keyword, Model model) {
     	model.addAttribute("keyword", keyword);
     	List<Memo> memos;
-    	if (keyword == null || keyword.isBlank()) {
+    	if (keyword != null) {
+    	    keyword = keyword.trim();
+    	}
+    	if (keyword == null || keyword.isBlank()){
     		memos = memoRepository.findAll();
     	} else {
-    		memos = memoRepository.findByTitleContainingOrContentContaining(keyword, keyword);
+    		memos = memoRepository.findByTitleContainingOrContentContaining(keyword,keyword);
     	}
     	model.addAttribute("memos", memos);
     	return "memo-list";
