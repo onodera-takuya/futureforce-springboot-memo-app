@@ -58,6 +58,7 @@ public class MemoController {
     	} else {
     		memos = memoRepository.findByTitleContainingOrContentContaining(keyword,keyword);
     	}
+    	memos.sort(Comparator.comparing(Memo::getPriority));
     	model.addAttribute("memos", memos);
     	return "memo-list";
     }
