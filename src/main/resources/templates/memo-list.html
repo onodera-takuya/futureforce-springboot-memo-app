@@ -16,6 +16,9 @@
             <a th:href="@{/memo/new}" class="btn btn-primary">
                 <i class="ri-add-circle-line"></i> 新規メモ
             </a>
+			<a th:href="@{/admin/signin}" class="btn btn-primary">
+                <i class="ri-add-circle-line"></i> ログアウト
+            </a>
         </div>
 			<form th:action="@{/memo/search}" method="get">
 				<input type="text" name="keyword" th:value="${keyword}">
