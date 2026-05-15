@@ -25,14 +25,11 @@ public class SecurityConfig {
                 .anyRequest().authenticated()
             )
             .csrf(csrf -> csrf
-            		.ignoringRequestMatchers("/h2-console/**")
-            		
-            		)
+        		.ignoringRequestMatchers("/h2-console/**")
+            )
             .headers(headers -> headers
-
-            	    .frameOptions(frame -> frame.sameOrigin())
-
-            	)
+            	.frameOptions(frame -> frame.sameOrigin())
+            )
             .formLogin((form) -> form
                 .loginPage("/admin/signin")
                 .loginProcessingUrl("/admin/signin")
@@ -42,8 +39,7 @@ public class SecurityConfig {
                 .failureUrl("/admin/signin?error")
                 .permitAll()
             );
-        return http.build();
-        
+        return http.build();        
     }
     
     @Bean
@@ -55,7 +51,6 @@ public class SecurityConfig {
     AuthenticationManager authenticationManager(HttpSecurity http, 
     		PasswordEncoder passwordEncoder, 
     		UserDetailsService userDetailsService) throws Exception {
-
         return http.getSharedObject(AuthenticationManagerBuilder.class)
                 .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder)

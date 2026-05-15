@@ -17,26 +17,22 @@
 				<label>姓</label>
 				<input type="text" th:field="*{last_name}">
 				<div th:if="${#fields.hasErrors('last_name')}" th:errors="*{last_name}" class="error-message"></div>
-	        </div>
-			
+	        </div>			
 			<div class="form-group">
 	            <label>名</label>
 	            <input type="text" th:field="*{first_name}">
 	            <div th:if="${#fields.hasErrors('first_name')}" th:errors="*{first_name}" class="error-message"></div>
-	        </div>
-			
+	        </div>			
 			<div class="form-group">
 	            <label>メールアドレス</label>
 	            <input type="text" th:field="*{email}">
 	            <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error-message"></div>
-	        </div>
-			
+	        </div>			
 			<div class="form-group">
 	            <label>パスワード</label>
 	            <input type="text" th:field="*{password}">
 	            <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error-message"></div>
-	        </div>
-			
+	        </div>			
 			<div class="signup-button-container">
 	            <button type="submit" th:text="${admin.id} != null ? 'ログイン' : '作成してログインへ'">作成してログインへ</button>
 			</div>

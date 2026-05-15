@@ -13,11 +13,9 @@
 	    <input type="text" name="email" placeholder="メールアドレス">
 	    <input type="password" name="password" placeholder="パスワード">
 	    <button type="submit">ログイン</button>
-
 	    <div th:if="${param.error}">
 	        <p>メールアドレスまたはパスワードが違います</p>
 	    </div>
 	</form>
-
     <script th:src="@{/js/common.js}"></script>
 </body>
