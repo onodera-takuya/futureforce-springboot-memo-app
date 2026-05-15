@@ -36,6 +36,7 @@
 			<div class="signup-button-container">
 	            <button type="submit" th:text="${admin.id} != null ? 'ログイン' : '作成してログインへ'">作成してログインへ</button>
 			</div>
+			<a th:href="@{/admin/signin}" class="btn btn-primary">ログイン画面へ</a>
 		</form>
     </div>
     <script th:src="@{/js/common.js}"></script>

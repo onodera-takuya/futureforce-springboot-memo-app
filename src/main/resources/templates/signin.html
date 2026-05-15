@@ -16,6 +16,7 @@
 	    <div th:if="${param.error}">
 	        <p>メールアドレスまたはパスワードが違います</p>
 	    </div>
+		<a th:href="@{/admin/signup}" class="btn btn-primary">登録画面へ</a>
 	</form>
     <script th:src="@{/js/common.js}"></script>
 </body>
