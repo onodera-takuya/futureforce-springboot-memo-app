@@ -36,9 +36,9 @@ public class SecurityConfig {
             .formLogin((form) -> form
                 .loginPage("/admin/signin")
                 .loginProcessingUrl("/admin/signin")
-                .usernameParameter("email")    // ← メールアドレスでログイン
-                .passwordParameter("password") // ← パスワードの name 属性
-                .defaultSuccessUrl("/memo", true) // ログイン成功後
+                .usernameParameter("email")
+                .passwordParameter("password")
+                .defaultSuccessUrl("/memo", true)
                 .failureUrl("/admin/signin?error")
                 .permitAll()
             );
