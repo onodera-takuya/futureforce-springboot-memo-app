@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>404 Not Found</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+	<form th:action="@{/admin/signin}" th:object="${admin}" method="post">
+	    <input type="text" name="email" placeholder="メールアドレス">
+	    <input type="password" name="password" placeholder="パスワード">
+	    <button type="submit">ログイン</button>
+
+	    <div th:if="${param.error}">
+	        <p>メールアドレスまたはパスワードが違います</p>
+	    </div>
+	</form>
+
+    <script th:src="@{/js/common.js}"></script>
+</body>
