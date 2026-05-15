@@ -40,7 +40,7 @@ public class Admin {
     private String email;
     
     @NotBlank(message = "パスワードを入力してください")
-    @Size(min = 8, message = "パスワードは8文字以上で入力してください")
+    @Size(min = 8,max = 255, message = "パスワードは8文字以上で入力してください")
     private String password;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
